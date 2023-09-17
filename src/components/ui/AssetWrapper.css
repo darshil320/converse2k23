@@ -1,0 +1,32 @@
+.asset-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scatter-asset {
+  position: absolute;
+  animation: moveAsset 10s linear infinite, rotateAsset 5s linear infinite;
+}
+
+@keyframes moveAsset {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rotateAsset {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

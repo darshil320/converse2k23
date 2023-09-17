@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb:36,12,57;
+  --background-end-rgb: 11, 11, 11;
+  --accentLightest: hsla(227, 87%, 59%, 0.3);
+  --accentLighter: hsla(227, 87%, 50%, 0.3);
+  --accent: #103fef;
+  --accentDark: #0d33bf;
+  --accentDarker: #0a268f;
+  /* --primary: #f936f9; */
+  --primary: #de8e0c;
+  --secondary: #e2e202;
+  --tertiary: rgb(74 222 128);
+  --max-width: 1200px;
+  --pixel-bg: #50c64c;
+  /* ↑ Inner background color */
+
+  --pixel-border: black;
+  /* ↑ Inner border color */
+
+  --pixel-border-2: white;
+  /* ↑ Middle border color */
+
+  --pixel-border-3: var(--pixel-border);
+  /* ↑ Outer border color */
+
+  --pixel: 0.125rem;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* styles.css (or your preferred stylesheet) */
+@media (max-width: 768px) {
+  .hide-bg-on-md {
+    display: none;
+  }
+}
+
+
+.modal::-webkit-scrollbar-track {
+  border-radius: 16px;
+}
+
+.modal::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  background-color: #3d3d3d;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+
+.converse {
+  animation: flicker 2.5s infinite alternate;
+  color: #fff;
+}
+
+h1 {
+  font-size: 4.2rem;    
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    
+   text-shadow:
+  0 0 5px rgba(254, 211, 255, 0.7),
+  0 0 8px rgba(249, 212, 250, 0.7),
+  0 0 15px rgba(249, 212, 250, 0.7),
+  0 0 45px rgba(249, 212, 250, 0.7),
+  0 0 70px rgba(249, 212, 250, 0.7),
+  0 0 90px rgba(249, 212, 250, 0.7);
+
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+
+.festdate {
+  color: #1492DB;
+    text-shadow:
+      0 0 7px #1492DB,
+      0 0 10px #1492DB,
+      0 0 21px #1492DB,
+      0 0 82px #1492DB,
+      0 0 102px #1492DB,
+      0 0 120px #1492DB;
+
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translateY(-3%);
+    animation-timing-function: linear;
+  }
+}
+
+@media (width > 765px) {
+  .bounce {
+    animation: bounce 1s infinite;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translateY(-3%);
+    animation-timing-function: linear;
+  }
+}
+
+@media (width > 765px) {
+  .bounce {
+    animation: bounce 1s infinite;
+  }
+}
+
+:hover.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translateY(-3%);
+    animation-timing-function: linear;
+  }
+}
+
+:hover.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translateY(-3%);
+    animation-timing-function: linear;
+  }
+}
+
+.pixel-border {
+  background: var(--pixel-bg);
+  box-shadow:
+		
+	/* Inner Background Color */
+    0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+    /* Pixel Border Layer 1 */ calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+    var(--pixel) 0 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+    0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+    0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+    0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+    /* Pixel Border Layer 2 */ calc(var(--pixel) * -2) 0 0 0
+      var(--pixel-border-2),
+    calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+    0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+    0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+    0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+    0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+    0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+    0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+    /* Border Layer 3: --pixel-border-3 */ calc(var(--pixel) * -3) 0 0 0
+      var(--pixel-border-3),
+    calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+    0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+    0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+    0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+    0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+    0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+    0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+    0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+}
+
+.PixellButton {
+  min-width: 150px;
+  height: 50px;
+
+  background-color: rgb(90, 208, 90);
+
+  border-top: 1px rgb(90, 208, 90);
+  border-left: 1px rgb(90, 208, 90);
+
+  border-color: rgb(56, 180, 7);
+  border-right: 4px solid darkgreen;
+  border-bottom: 6px solid darkgreen;
+
+  box-shadow:
+    -3px 0 0 0 white,
+    3px 0 0 0 white,
+    0 -3px 0 0 white,
+    0 3px 0 0 white;
+}
+
+.PixellButton:hover {
+  background-color: rgb(75, 195, 75);
+
+  border-top: 1px rgb(90, 208, 90);
+  border-left: 1px rgb(90, 208, 90);
+
+  border-color: rgb(56, 180, 7);
+  border-right: 6px solid darkgreen;
+  border-bottom: 8px solid darkgreen;
+}
+
+.PixellButton:active {
+  background-color: rgb(75, 195, 75);
+  transform: translateY(3px);
+  border-right: 4px solid darkgreen;
+  border-bottom: 5px solid darkgreen;
+}
+
+@media only screen and (max-width: 850px) {
+  .PixellButton {
+    background-color: rgb(90, 208, 90);
+
+    border-top: 1px rgb(90, 208, 90);
+    border-left: 1px rgb(90, 208, 90);
+
+    border-color: rgb(56, 180, 7);
+    border-right: 6px solid darkgreen;
+    border-bottom: 8px solid darkgreen;
+  }
+}
+
+
+
+#marquee::-webkit-scrollbar {
+  display: none;
+}
+
+#marquee h1 {
+  animation-timing-function: linear;
+  animation-name: scroll;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(calc(-100% - 34px));
+  }
+}
